@@ -1,0 +1,31 @@
+name: 📒 Notebook Execution test
+
+on:
+  push:
+    paths:
+      -'02_notebook_execution_check/**'
+      -'.github/workflows/02-test-notebook-execution.yml'
+  pull_request:
+
+jobs:
+  test-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: ⬇️ Checkout repository
+      uses: actions/checkout@v3
+
+    - name: 🔧 Setup Miniconda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        python-version: 3.10
+        activate-environment: ci-cd-env
+    
+    - name: 📦 Install dependencies
+      run: |
+        pip install -r 00_setup/requirements.txt
+    
+    - name: 🧪 Run the notebook
+      run: |
+        jupyter nbconvert --to notebook --execute 02_notebook_execution_check/regression_model_training.ipynb --output executed.ipynb

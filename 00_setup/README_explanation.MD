@@ -1,4 +1,4 @@
-## Folder name 00_setup
+## 00_setup reasoning
 <br>
 
 ### Step1: understanding the necessity of this folder
