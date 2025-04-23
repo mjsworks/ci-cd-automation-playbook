@@ -1,0 +1,38 @@
+name: 📦 Save Training Artifacts
+
+on:
+  push:
+    paths:
+      - '03_train_model_with_action/**'
+      - '.github/workflows/05-save-results-artifacts.yml'
+  pull_request:
+
+jobs:
+  job-name-here:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: ⬇️ Checkout repository
+      uses: actions/checkout@v3
+
+    - name: 🔧 Set up Miniconda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        python-version: 3.10
+        activate-environment: your-env-name
+
+    - name: 📦 Install dependencies
+      run: |
+        pip install -r 00_setup/requirements.txt
+
+    - name: 🚀 Run your main task
+      run: |
+        # Replace with your specific task
+        python 03_train_model_with_action/train_and_log.py
+    
+    - name: 📤 Upload artifact
+      uses: action/upload-artifact@v3
+      with:
+        name: optuna-summary-{{ github.run_number }}
+        path: optuna-summary.json
