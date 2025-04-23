@@ -3,3 +3,4 @@ notebook        # works with ipynb
 optuna          # auto-hyperparam tuning
 streamlit       # web-ui
 nbconvert       # tests notebook in ci/cd
+jupyter         # access to jupyter notebook
