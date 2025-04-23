@@ -19,8 +19,8 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
-        python-version: 3.10
-        activate-environment: your-env-name
+        python-version: "3.10"
+        activate-environment: ci-cd-env
 
     - name: 📦 Install dependencies
       run: |
@@ -32,7 +32,7 @@ jobs:
         python 03_train_model_with_action/train_and_log.py
     
     - name: 📤 Upload artifact
-      uses: action/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: optuna-summary-{{ github.run_number }}
         path: optuna-summary.json
