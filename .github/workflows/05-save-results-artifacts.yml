@@ -34,5 +34,5 @@ jobs:
     - name: 📤 Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: optuna-summary-{{ github.run_number }}
+        name: optuna-summary-${{ github.run_number }}
         path: optuna-summary.json
