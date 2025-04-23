@@ -28,4 +28,4 @@ jobs:
     
     - name: 🚀 Run training script
       run: |
-        python -3_train_model_with_action/train_and_log.py
+        python 03_train_model_with_action/train_and_log.py
