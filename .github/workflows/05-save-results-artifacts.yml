@@ -32,7 +32,7 @@ jobs:
         python 03_train_model_with_action/train_and_log.py
     
     - name: 📤 Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: optuna-summary-${{ github.run_number }}
         path: optuna-summary.json
