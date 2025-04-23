@@ -5,7 +5,7 @@ on:
     paths:
       - '03_train_model_with_action/**'
       - '.github/workflows/03-trigger-optuna-run.yml'
-  pull_requests:
+  pull_request:
 
 jobs:
   test-notebook:
