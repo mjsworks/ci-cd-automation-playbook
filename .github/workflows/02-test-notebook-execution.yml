@@ -3,8 +3,8 @@ name: 📒 Notebook Execution test
 on:
   push:
     paths:
-      -'02_notebook_execution_check/**'
-      -'.github/workflows/02-test-notebook-execution.yml'
+      - '02_notebook_execution_check/**'
+      - '.github/workflows/02-test-notebook-execution.yml'
   pull_request:
 
 jobs:
