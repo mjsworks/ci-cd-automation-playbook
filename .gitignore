@@ -1,0 +1,12 @@
+# ignore python/conda clutter
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+.env
+.venv/
+env/
+venv/
+ci-cd-env/
+*.DS_Store
